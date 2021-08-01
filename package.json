@@ -1,11 +1,12 @@
 {
-  "name": "@paulrberg/solidity-template",
-  "description": "Setup for writing Solidity smart contracts",
+  "name": "erc20-faucet",
+  "description": "ERC20 token & faucet",
   "version": "1.0.0",
   "author": {
-    "name": "Paul Razvan Berg",
-    "url": "https://paulrberg.com"
+    "name": "Sven Meyer",
+    "url": "https://github.com/SvenMeyer"
   },
+  "license": "MIT",
   "devDependencies": {
     "@codechecks/client": "^0.1.11",
     "@commitlint/cli": "^13.1.0",
@@ -16,6 +17,7 @@
     "@ethersproject/bytes": "^5.4.0",
     "@ethersproject/providers": "^5.4.3",
     "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-etherscan": "^2.1.4",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
     "@typechain/ethers-v5": "^7.0.1",
     "@typechain/hardhat": "^2.2.0",
@@ -82,5 +84,8 @@
     "prettier:check": "prettier --check --config ./.prettierrc \"**/*.{js,json,md,sol,ts}\"",
     "test": "hardhat test",
     "typechain": "hardhat typechain"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.2.0"
   }
 }

@@ -1,6 +1,10 @@
-# Solidity Template
+# A ERC20 Solar Token & Faucet
 
-My favourite setup for writing Solidity smart contracts.
+The goal of this project is to design and deploy a simple ERC20 token on the Rinkeby testnet. Implement your smart contract using Solidity. Your token must at least implement the ERC20 specification.
+
+In addition to the public methods defined in the ERC20 standard, implement a faucet where users can request your tokens. This method will mint the requested amount of tokens to the caller's address. Implement a daily limit of 100k base units and a global limit of 10 million base units per address. Your token should use 5 decimals.
+
+# Project Setup
 
 - [Hardhat](https://github.com/nomiclabs/hardhat): compile and run the smart contracts on a local development network
 - [TypeChain](https://github.com/ethereum-ts/TypeChain): generate TypeScript types for smart contracts
@@ -9,9 +13,6 @@ My favourite setup for writing Solidity smart contracts.
 - [Solhint](https://github.com/protofire/solhint): linter
 - [Solcover](https://github.com/sc-forks/solidity-coverage): code coverage
 - [Prettier Plugin Solidity](https://github.com/prettier-solidity/prettier-plugin-solidity): code formatter
-
-This is a GitHub template, which means you can reuse it as many times as you want. You can do that by clicking the "Use this
-template" button at the top of the page.
 
 ## Usage
 

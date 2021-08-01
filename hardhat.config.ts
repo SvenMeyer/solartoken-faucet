@@ -2,6 +2,7 @@ import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
 import "hardhat-gas-reporter";
 import "solidity-coverage";
+import "@nomiclabs/hardhat-etherscan";
 
 import "./tasks/accounts";
 import "./tasks/clean";
@@ -56,6 +57,11 @@ const config: HardhatUserConfig = {
     enabled: process.env.REPORT_GAS ? true : false,
     excludeContracts: [],
     src: "./contracts",
+  },
+  etherscan: {
+    // Your API key for Etherscan
+    // Obtain one at https://etherscan.io/
+    apiKey: process.env.ETHERSCAN_API_KEY,
   },
   networks: {
     hardhat: {
