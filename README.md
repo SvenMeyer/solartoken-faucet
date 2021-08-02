@@ -90,17 +90,19 @@ $ yarn clean
 
 ### Deploy
 
-Deploy the contracts to Hardhat Network:
+Deploy the token contract:
 
 ```sh
-$ yarn deploy
+npx hardhat run scripts/deploy-token.ts --network kovan
 ```
 
-Deploy the contracts to a specific network, such as the Ropsten testnet:
+Within `scripts/deploy-faucet.ts` provide the address of the ERC20 token contract.
 
 ```sh
-$ yarn deploy:network ropsten
+npx hardhat run scripts/deploy-faucet.ts --network kovan
 ```
+
+To allow the faucet contract to call `mint()` of the token contract, `MINTER_ROLE` has to be set for the faucet contract address on the token contract.
 
 ## Syntax Highlighting
 
