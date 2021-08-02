@@ -143,5 +143,16 @@ describe("Unit tests", function () {
       // request TOTAL_MAX_AMOUNT
       await expect(this.erc20Faucet.connect(this.signers.user1).requestToken(TOTAL_MAX_AMOUNT / 2)).to.be.reverted;
     });
+
+    it("user can NOT call mint on the ERC20Token", async function () {
+      await expect(this.solarToken.connect(this.signers.user1).mint(this.signers.user1.address, DAILY_MAX_AMOUNT)).to.be
+        .reverted;
+    });
+
+    it("admin can call mint on the ERC20Token", async function () {
+      const balance = await this.solarToken.balanceOf(this.signers.admin.address);
+      await this.solarToken.connect(this.signers.admin).mint(this.signers.admin.address, 10000);
+      expect(await this.solarToken.balanceOf(this.signers.admin.address)).to.equal(balance.add(10000));
+    });
   });
 });
